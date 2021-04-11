@@ -4,20 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PeopleActivity">
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView3"
-        android:layout_width="415dp"
-        android:layout_height="80dp"
-        android:background="#95B1F6"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/nav_menu" />
+    tools:context=".InstitutionsActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar3"
+        android:id="@+id/toolbar4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#95B1F6"
@@ -27,16 +17,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView4"
+        android:layout_width="409dp"
+        android:layout_height="76dp"
+        android:background="#95B1F6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/nav_menu" />
+
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="355dp"
-        android:layout_height="535dp"
+        android:layout_width="379dp"
+        android:layout_height="566dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView3"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar3"
-        tools:listitem="@layout/item_people" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar4"
+        tools:listitem="@layout/item_institutions" />
 </androidx.constraintlayout.widget.ConstraintLayout>
