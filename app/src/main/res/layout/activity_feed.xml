@@ -28,8 +28,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="361dp"
-        android:layout_height="557dp"
+        android:layout_width="396dp"
+        android:layout_height="562dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="12dp"
@@ -39,5 +39,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar2"
         tools:listitem="@layout/item_history" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="175dp"
+        android:clickable="true"
+        app:backgroundTint="@color/principalButtonColor"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:maxImageSize="64dp"
+        app:srcCompat="@drawable/ic_history_edu_white_24dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
