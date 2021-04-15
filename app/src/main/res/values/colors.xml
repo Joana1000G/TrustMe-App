@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="principalButtonColor">#323B90</color>
     <color name="secundaryButtonColor">#C6DBF4</color>
+    <color name="green_Text">#B3EEB6</color>
+    <color name="secondaryButtonColor">#95B1F6</color>
 </resources>

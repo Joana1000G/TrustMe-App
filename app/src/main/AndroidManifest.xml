@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TrustMe">
-        <activity android:name=".WriteHistoryActivity"></activity>
+        <activity android:name=".WriteHistoryActivity" />
         <activity android:name=".DonationActivity" />
         <activity android:name=".OneHistoryActivity" />
         <activity android:name=".InstitutionsActivity" />
