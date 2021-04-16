@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TrustMe">
-        <activity android:name=".InstitutionInformationActivity"></activity>
+        <activity android:name=".ViolentMeterActivity"></activity>
+        <activity android:name=".InstitutionInformationActivity" />
         <activity android:name=".WriteHistoryActivity" />
         <activity android:name=".DonationActivity" />
         <activity android:name=".OneHistoryActivity" />

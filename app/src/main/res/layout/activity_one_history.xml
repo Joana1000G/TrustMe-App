@@ -19,8 +19,8 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView7"
-        android:layout_width="415dp"
-        android:layout_height="82dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:background="#95B1F6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,8 +28,8 @@
         app:menu="@menu/nav_menu" />
 
     <ScrollView
-        android:layout_width="403dp"
-        android:layout_height="587dp"
+        android:layout_width="402dp"
+        android:layout_height="610dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
