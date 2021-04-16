@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="options_categories">
+        <item>Categories ...</item>
         <item>Psychological</item>
         <item>Physical</item>
         <item>Economic</item>
