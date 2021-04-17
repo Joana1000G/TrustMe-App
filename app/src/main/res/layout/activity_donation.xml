@@ -7,7 +7,7 @@
     tools:context=".DonationActivity">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView5"
+        android:id="@+id/bottomNavigationViewDonation"
         android:layout_width="416dp"
         android:layout_height="73dp"
         android:background="#95B1F6"
@@ -101,7 +101,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView31" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/btnDonation"
         android:layout_width="206dp"
         android:layout_height="60dp"
         android:layout_marginTop="24dp"
@@ -109,7 +109,7 @@
         android:drawableBottom="@drawable/ic_paypal_icon"
         app:backgroundTint="#FFFFFF"
         app:elevation="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView5"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationViewDonation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView32"

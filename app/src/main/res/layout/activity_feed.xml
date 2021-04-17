@@ -7,7 +7,7 @@
     tools:context=".FeedActivity">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView2"
+        android:id="@+id/bottomNavigationViewFeed"
         android:layout_width="415dp"
         android:layout_height="74dp"
         android:background="#95B1F6"
@@ -34,21 +34,21 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="12dp"
         android:layout_marginBottom="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView2"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationViewFeed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar2"
         tools:listitem="@layout/item_history" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/floatingActionButtonWriteHistory"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginEnd="175dp"
         android:clickable="true"
         app:backgroundTint="@color/principalButtonColor"
         app:fabSize="normal"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView2"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationViewFeed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"

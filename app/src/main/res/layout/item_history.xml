@@ -30,7 +30,7 @@
             app:srcCompat="@drawable/ic_people_in_list" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/txtUserStory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -46,7 +46,7 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/txtDateStory"
             android:layout_width="80dp"
             android:layout_height="17dp"
             android:layout_marginTop="56dp"
@@ -88,11 +88,11 @@
             android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/textView11"
+            app:layout_constraintStart_toStartOf="@+id/txtTitleStory"
             app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/txtTitleStory"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -108,7 +108,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
         <TextView
-            android:id="@+id/textView12"
+            android:id="@+id/txtTextHistory"
             android:layout_width="362dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -119,10 +119,10 @@
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+            app:layout_constraintTop_toBottomOf="@+id/txtTitleStory" />
 
         <TextView
-            android:id="@+id/textView13"
+            android:id="@+id/txtReadMore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="92dp"
@@ -130,13 +130,13 @@
             android:textColor="#128224"
             android:textSize="14sp"
             android:textStyle="bold|italic"
-            app:layout_constraintEnd_toEndOf="@+id/textView12"
+            app:layout_constraintEnd_toEndOf="@+id/txtTextHistory"
             app:layout_constraintHorizontal_bias="0.815"
-            app:layout_constraintStart_toStartOf="@+id/textView12"
-            app:layout_constraintTop_toTopOf="@+id/textView12" />
+            app:layout_constraintStart_toStartOf="@+id/txtTextHistory"
+            app:layout_constraintTop_toTopOf="@+id/txtTextHistory" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btnCommentsOneHistory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -151,7 +151,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView13"
+            app:layout_constraintTop_toBottomOf="@+id/txtReadMore"
             app:strokeColor="#00C62727" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

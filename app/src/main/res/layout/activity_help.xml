@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
+        android:id="@+id/bottomNavigationViewHelp"
         android:layout_width="410dp"
         android:layout_height="73dp"
         android:background="#95B1F6"
@@ -60,7 +60,7 @@
         android:textSize="32sp"
         android:background="@drawable/custom_button_style"
         app:backgroundTint="#C20A1579"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationViewHelp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent" />

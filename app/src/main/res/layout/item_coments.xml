@@ -28,7 +28,7 @@
             app:srcCompat="@drawable/ic_people_in_list" />
 
         <TextView
-            android:id="@+id/textView37"
+            android:id="@+id/txtUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
@@ -41,7 +41,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView38"
+            android:id="@+id/txtDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="44dp"
@@ -50,11 +50,11 @@
             android:textColor="#128224"
             android:textSize="12sp"
             android:textStyle="italic"
-            app:layout_constraintBottom_toTopOf="@+id/textView39"
+            app:layout_constraintBottom_toTopOf="@+id/txtCommentary"
             app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
-            android:id="@+id/textView39"
+            android:id="@+id/txtCommentary"
             android:layout_width="292dp"
             android:layout_height="48dp"
             android:layout_marginStart="70dp"
@@ -65,10 +65,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.24"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView37" />
+            app:layout_constraintTop_toBottomOf="@+id/txtUser" />
 
         <RatingBar
-            android:id="@+id/ratingBar"
+            android:id="@+id/ratingBarStars"
             style="@android:style/Widget.Holo.RatingBar.Indicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -82,7 +82,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.03"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView39" />
+            app:layout_constraintTop_toBottomOf="@+id/txtCommentary" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

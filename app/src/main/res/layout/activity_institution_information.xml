@@ -7,7 +7,7 @@
     tools:context=".InstitutionInformationActivity">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView8"
+        android:id="@+id/bottomNavigationViewInstitutionInformation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
@@ -15,7 +15,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/nav_menu" />
+        app:menu="@menu/nav_menu" >
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar8"
@@ -32,7 +34,7 @@
         android:id="@+id/scrollView3"
         android:layout_width="412dp"
         android:layout_height="620dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView8"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationViewInstitutionInformation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,6 +44,19 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView52"
+                tools:listitem="@layout/item_list_more_information" />
 
             <TextView
                 android:id="@+id/textView43"
@@ -56,7 +71,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.016"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView45" />
+                app:layout_constraintTop_toBottomOf="@+id/textAddress" />
 
             <TextView
                 android:id="@+id/textView42"
@@ -68,7 +83,7 @@
                 android:text="Address:"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toStartOf="@+id/textView45"
+                app:layout_constraintEnd_toStartOf="@+id/textAddress"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView40" />
 
@@ -82,12 +97,12 @@
                 android:text="Phone:"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toStartOf="@+id/textView44"
+                app:layout_constraintEnd_toStartOf="@+id/textPhone"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView36" />
+                app:layout_constraintTop_toBottomOf="@+id/textHours" />
 
             <TextView
-                android:id="@+id/textView36"
+                android:id="@+id/textHours"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -108,14 +123,14 @@
                 android:layout_height="70dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="24dp"
-                app:layout_constraintBottom_toTopOf="@+id/textView36"
-                app:layout_constraintEnd_toStartOf="@+id/textView35"
+                app:layout_constraintBottom_toTopOf="@+id/textHours"
+                app:layout_constraintEnd_toStartOf="@+id/textInstitution"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_institutions_in_list" />
 
             <TextView
-                android:id="@+id/textView35"
+                android:id="@+id/textInstitution"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -130,21 +145,21 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView44"
+                android:id="@+id/textPhone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="200dp"
                 android:layout_marginBottom="12dp"
                 android:text="33 3030 5450 "
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                app:layout_constraintBottom_toTopOf="@+id/textView45"
+                app:layout_constraintBottom_toTopOf="@+id/textAddress"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView40"
                 app:layout_constraintTop_toTopOf="@+id/textView40"
                 app:layout_constraintVertical_bias="0.0" />
 
             <TextView
-                android:id="@+id/textView45"
+                android:id="@+id/textAddress"
                 android:layout_width="287dp"
                 android:layout_height="37dp"
                 android:layout_marginTop="8dp"
@@ -153,10 +168,10 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView42"
-                app:layout_constraintTop_toBottomOf="@+id/textView44" />
+                app:layout_constraintTop_toBottomOf="@+id/textPhone" />
 
             <TextView
-                android:id="@+id/textView46"
+                android:id="@+id/textObjetive"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -180,76 +195,67 @@
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView46" />
-
-            <TextView
-                android:id="@+id/textView49"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="24dp"
-                android:text="TextView"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView48" />
+                app:layout_constraintTop_toBottomOf="@+id/textObjetive" />
 
             <TextView
                 android:id="@+id/textView50"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="13dp"
                 android:layout_marginEnd="24dp"
+                android:layout_marginBottom="2dp"
                 android:text="What services does it offer?"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/recyclerView3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView49" />
-
-            <TextView
-                android:id="@+id/textView51"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="24dp"
-                android:text="TextView"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView50" />
+                app:layout_constraintTop_toBottomOf="@+id/recyclerView2" />
 
             <TextView
                 android:id="@+id/textView52"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="14dp"
                 android:layout_marginEnd="24dp"
+                android:layout_marginBottom="12dp"
                 android:text="More information: "
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/recyclerView5"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView51" />
+                app:layout_constraintTop_toBottomOf="@+id/recyclerView3" />
 
-            <TextView
-                android:id="@+id/textView53"
-                android:layout_width="0dp"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView2"
+                android:layout_width="335dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="13dp"
+                app:layout_constraintBottom_toTopOf="@+id/textView50"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView48"
+                tools:listitem="@layout/item_list_crimes" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView3"
+                android:layout_width="333dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="24dp"
-                android:layout_marginBottom="24dp"
-                android:text="TextView"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="12dp"
+                app:layout_constraintBottom_toTopOf="@+id/textView52"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView52" />
+                app:layout_constraintTop_toBottomOf="@+id/textView50"
+                tools:listitem="@layout/item_list_services" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
