@@ -1,5 +1,6 @@
 package com.trustme.trustme;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -11,6 +12,9 @@ import android.view.View;
 
 import android.content.Intent;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -57,25 +61,36 @@ public class LoginActivity extends AppCompatActivity {
 
     private void clickLogin(View view) {
         //Asignación de valores iniciales a las variables, asignación de vacio
-        String username = "";
+        String email = "";
         String password = "";
 
         //Tomar los valores de la caja de texto
 
-        username = editTextUsername.getText().toString().trim();
+        email = editTextUsername.getText().toString().trim();
         password = editTextPassword.getText().toString();
 
         // Operodores Lógicos
         // ! not
         // && and
         // || or
-         //TODO preguntar como hacer para que esta pantalla revise si el usuario está registrado
-        if(username.equals("Joana1000G") && password.equals("651013")) {
-            navigateToFeed();
-        } else {
-            Toast.makeText(this, "Incorrect Data", Toast.LENGTH_SHORT).show();
-        }
+         login(email, password);
 
+
+    }
+
+    private void login(String email, String password) {
+        firebaseAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()) {
+                            navigateToFeed();
+                        } else {
+                            Toast.makeText(LoginActivity.this, "Incorect Data",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
 
     }
 

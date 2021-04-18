@@ -12,17 +12,21 @@
         <activity android:name=".ViolentMeterActivity"></activity>
         <activity android:name=".InstitutionInformationActivity" />
         <activity android:name=".WriteHistoryActivity" />
+        <activity android:name=".SignUpActivity"/>
+        <activity android:name=".HelpActivity"/>
         <activity android:name=".DonationActivity" />
         <activity android:name=".OneHistoryActivity" />
         <activity android:name=".InstitutionsActivity" />
         <activity android:name=".FeedActivity" />
         <activity android:name=".PeopleActivity" />
-        <activity android:name=".LoginActivity" />
-        <intent-filtrer>
-            <action android:name="android.intent.action.LOGIN" />
+        <activity android:name=".LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filtrer>
+
     </application>
 
 </manifest>

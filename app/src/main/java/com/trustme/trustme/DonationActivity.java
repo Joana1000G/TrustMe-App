@@ -6,11 +6,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class DonationActivity extends AppCompatActivity implements
         BottomNavigationView.OnNavigationItemSelectedListener{
+
+    private Button btnDonation;
 
     private BottomNavigationView menuNavigation;
 
@@ -19,8 +23,16 @@ public class DonationActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donation);
 
+        btnDonation = findViewById(R.id.btnDonation);
+        btnDonation.setOnClickListener(this::donation);
+
         menuNavigation = findViewById(R.id.bottomNavigationViewDonation);
         menuNavigation.setOnNavigationItemSelectedListener(this);
+    }
+
+    //TODO vincular a PayPal
+    private void donation(View view) {
+
     }
 
     @Override
@@ -58,4 +70,5 @@ public class DonationActivity extends AppCompatActivity implements
         Intent intentDonate = new Intent(DonationActivity.this,DonationActivity.class);
         startActivity(intentDonate);
     }
+
 }
