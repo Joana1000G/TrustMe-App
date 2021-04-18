@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxSegurityPolitics"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxSecurityPolitics"
         app:layout_constraintVertical_bias="0.31" />
 
     <ImageView
@@ -105,7 +105,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextConfirmPassword" />
 
     <CheckBox
-        android:id="@+id/checkBoxSegurityPolitics"
+        android:id="@+id/checkBoxSecurityPolitics"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"

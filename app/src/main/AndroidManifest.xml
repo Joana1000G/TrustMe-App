@@ -18,6 +18,11 @@
         <activity android:name=".FeedActivity" />
         <activity android:name=".PeopleActivity" />
         <activity android:name=".LoginActivity" />
+        <intent-filtrer>
+            <action android:name="android.intent.action.LOGIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filtrer>
     </application>
 
 </manifest>

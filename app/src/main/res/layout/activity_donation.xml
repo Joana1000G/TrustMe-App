@@ -107,7 +107,7 @@
         android:layout_marginTop="24dp"
         android:background="@drawable/custom_button_donations"
         android:drawableBottom="@drawable/ic_paypal_icon"
-        app:backgroundTint="#FFFFFF"
+        app:backgroundTint="@color/white"
         app:elevation="20dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationViewDonation"
         app:layout_constraintEnd_toEndOf="parent"
