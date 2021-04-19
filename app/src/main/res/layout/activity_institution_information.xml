@@ -46,7 +46,7 @@
             android:layout_height="wrap_content">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView5"
+                android:id="@+id/recyclerListMoreInformation"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -208,10 +208,10 @@
                 android:text="What services does it offer?"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="16sp"
-                app:layout_constraintBottom_toTopOf="@+id/recyclerView3"
+                app:layout_constraintBottom_toTopOf="@+id/recyclerListServices"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/recyclerView2" />
+                app:layout_constraintTop_toBottomOf="@+id/recyclerListCrimes" />
 
             <TextView
                 android:id="@+id/textView52"
@@ -224,13 +224,13 @@
                 android:text="More information: "
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="16sp"
-                app:layout_constraintBottom_toTopOf="@+id/recyclerView5"
+                app:layout_constraintBottom_toTopOf="@+id/recyclerListMoreInformation"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/recyclerView3" />
+                app:layout_constraintTop_toBottomOf="@+id/recyclerListServices" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView2"
+                android:id="@+id/recyclerListCrimes"
                 android:layout_width="335dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -244,7 +244,7 @@
                 tools:listitem="@layout/item_list_crimes" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView3"
+                android:id="@+id/recyclerListServices"
                 android:layout_width="333dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"

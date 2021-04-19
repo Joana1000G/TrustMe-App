@@ -28,6 +28,7 @@
         app:menu="@menu/nav_menu" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerListInstitutions"
         android:layout_width="379dp"
         android:layout_height="603dp"
         android:layout_marginStart="24dp"

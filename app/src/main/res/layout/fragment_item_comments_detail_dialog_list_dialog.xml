@@ -12,7 +12,7 @@
     tools:listitem="@layout/fragment_item_comments_detail_dialog_list_dialog_item">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/recyclerListComments"
         android:layout_width="410dp"
         android:layout_height="277dp"
         android:layout_marginBottom="8dp"
@@ -32,7 +32,7 @@
         android:src="@drawable/ic_people_in_list"
         app:layout_constraintEnd_toStartOf="@+id/editTextWriteComent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+        app:layout_constraintTop_toBottomOf="@+id/recyclerListComments" />
 
     <EditText
         android:id="@+id/editTextWriteComent"
@@ -62,7 +62,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textSize="24sp"
         android:textStyle="bold|italic"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerListComments"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"

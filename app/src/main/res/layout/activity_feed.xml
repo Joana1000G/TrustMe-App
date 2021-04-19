@@ -28,6 +28,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerListHistory"
         android:layout_width="396dp"
         android:layout_height="562dp"
         android:layout_marginStart="12dp"
@@ -41,10 +42,11 @@
         tools:listitem="@layout/item_history" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButtonWriteHistory"
+        android:id="@+id/btnWriteHistory"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginEnd="175dp"
+        android:layout_marginStart="170dp"
+        android:layout_marginEnd="170dp"
         android:clickable="true"
         app:backgroundTint="@color/principalButtonColor"
         app:fabSize="normal"

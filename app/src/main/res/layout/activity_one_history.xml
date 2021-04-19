@@ -62,7 +62,7 @@
                 android:text="User1965"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="24sp"
-                app:layout_constraintBottom_toTopOf="@+id/textView5"
+                app:layout_constraintBottom_toTopOf="@+id/txtDegree"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/imageView7"
@@ -80,14 +80,14 @@
                 android:textColor="#000000"
                 android:textSize="14sp"
                 android:textStyle="italic"
-                app:layout_constraintBottom_toTopOf="@+id/textView5"
+                app:layout_constraintBottom_toTopOf="@+id/txtDegree"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@+id/imageView3"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/txtDegree"
                 android:layout_width="wrap_content"
                 android:layout_height="22dp"
                 android:layout_marginStart="293dp"
@@ -97,13 +97,13 @@
                 android:textColor="#128224"
                 android:textSize="16sp"
                 android:textStyle="italic"
-                app:layout_constraintBottom_toTopOf="@+id/textView6"
+                app:layout_constraintBottom_toTopOf="@+id/txtCategory"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtDateStory" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/txtCategory"
                 android:layout_width="wrap_content"
                 android:layout_height="25dp"
                 android:layout_marginStart="24dp"
@@ -115,7 +115,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/txtTitleStory"
-                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+                app:layout_constraintTop_toBottomOf="@+id/txtDegree" />
 
             <TextView
                 android:id="@+id/txtTitleStory"
@@ -131,7 +131,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+                app:layout_constraintTop_toBottomOf="@+id/txtCategory" />
 
             <TextView
                 android:id="@+id/txtTextHistory"
