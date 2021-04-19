@@ -41,7 +41,7 @@ public class PeopleAdapter  extends RecyclerView.Adapter<PeopleAdapter.ViewHolde
 
         holder.txtName.setText(people.getName());
         holder.txtDescription.setText(people.getDescription());
-        holder.txtPhone.setText(people.getPhone());
+        holder.txtPhone.setText(people.getPhone().toString());
 
         holder.onClick(listener, people);
     }

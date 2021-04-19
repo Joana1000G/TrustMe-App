@@ -6,11 +6,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class OneHistoryActivity extends AppCompatActivity implements
         BottomNavigationView.OnNavigationItemSelectedListener {
+
+    private Button btnCommentsOneHistory;
 
     private BottomNavigationView menuNavigation;
 
@@ -19,8 +23,18 @@ public class OneHistoryActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_one_history);
 
+        btnCommentsOneHistory = findViewById(R.id.btnCommentsOneHistory);
+
+        btnCommentsOneHistory.setOnClickListener(this::navigateToComments);
+
         menuNavigation = findViewById(R.id.bottomNavigationViewOneHistory);
         menuNavigation.setOnNavigationItemSelectedListener(this);
+    }
+
+    private void navigateToComments(View view) {
+        Intent intentComments = new Intent(OneHistoryActivity.this,
+                ItemCommentsDetailDialogFragment.class);
+        startActivity(intentComments);
     }
 
     @Override

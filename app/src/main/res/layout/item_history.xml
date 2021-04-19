@@ -109,7 +109,7 @@
 
         <TextView
             android:id="@+id/txtTextHistory"
-            android:layout_width="362dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="20dp"
@@ -125,15 +125,14 @@
             android:id="@+id/txtReadMore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="92dp"
             android:text="“Read more”"
             android:textColor="#128224"
             android:textSize="14sp"
             android:textStyle="bold|italic"
             app:layout_constraintEnd_toEndOf="@+id/txtTextHistory"
-            app:layout_constraintHorizontal_bias="0.815"
+            app:layout_constraintHorizontal_bias="0.814"
             app:layout_constraintStart_toStartOf="@+id/txtTextHistory"
-            app:layout_constraintTop_toTopOf="@+id/txtTextHistory" />
+            app:layout_constraintTop_toBottomOf="@+id/txtTextHistory" />
 
         <Button
             android:id="@+id/btnCommentsOneHistory"

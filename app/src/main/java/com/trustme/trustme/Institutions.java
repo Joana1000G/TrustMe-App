@@ -5,12 +5,12 @@ public class Institutions {
     private int id;
     private String nameInstitution;
     private String hoursInstitution;
-    private String phoneInstitution;
+    private Long phoneInstitution;
     private String address;
 
     public Institutions() {}
 
-    public Institutions(int id, String name, String hoursInstitution, String phoneInstitution,
+    public Institutions(int id, String name, String hoursInstitution, Long phoneInstitution,
                         String address) {
         this.id = id;
         this.nameInstitution = nameInstitution;
@@ -29,8 +29,8 @@ public class Institutions {
     public void setHoursInstitution(String hoursInstitution) {this.hoursInstitution =
             hoursInstitution;}
 
-    public String getPhoneInstitution() {return phoneInstitution;}
-    public void setPhoneInstitution(String phoneInstitution) {this.phoneInstitution =
+    public Long getPhoneInstitution() {return phoneInstitution;}
+    public void setPhoneInstitution(Long phoneInstitution) {this.phoneInstitution =
             phoneInstitution;}
 
     public String getAddress() {return address;}

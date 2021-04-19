@@ -105,7 +105,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void navigateToFeedWithoutAccount(View view) {
-        Intent intentWithoutAccount = new Intent(LoginActivity.this,FeedActivity.class);
+        Intent intentWithoutAccount = new Intent(LoginActivity.this,
+                FeedActivity.class);
         startActivity(intentWithoutAccount);
     }
 

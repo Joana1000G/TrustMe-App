@@ -47,13 +47,13 @@ public class PeopleActivity extends AppCompatActivity implements
 
         People florNayeliGonzálezAndrade = new People(1, "Flor Nayeli Gonzáles Andrade",
                 "Psychologist, Individual, group, couple and family therapy, as " +
-                        "well as specialized", "38485026");
+                        "well as specialized", 38485026L);
         People rosalinaRoblesGarcía = new People(2, "Rosalina Robles García",
                 "Psychologist, Lic. Psychology;" +
                 "Price per session: $ 299 - $ 499, Sliding scale according to income: Yes" +
                 "We will take your process with short, simple and effective methods using NLP, " +
                 "Kinesiology, Mindfulness techniques, all focused on achieving your well-being.",
-                "8002832805");
+                8002832805L);
 
         //Guardar en la lista
         listPeople.add(florNayeliGonzálezAndrade);

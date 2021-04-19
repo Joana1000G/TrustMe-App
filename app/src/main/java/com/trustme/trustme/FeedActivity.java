@@ -54,9 +54,9 @@ public class FeedActivity extends AppCompatActivity implements
         History relationshipOfAbuse = new History(1,"User1965",
                 "2 hours ago", "Degree 2", "Category Mistreatment",
                 "Relationship of abuse",
-                "About 1 year ago I broke up with my boyfriend for his mistreatment " +
-                        "of me, both psychological and physical for more than 1 year later I " +
-                        "realized the atmosphere so negative that there was in");
+                "About 1 year ago I broke up with my boyfriend for his mistreatment of me, " +
+                        "both psychological and physical for more than 1 year later I realized" +
+                        " the atmosphere so negative that there was in");
         History myChildrenAreInDanger  = new History(2, "User1966", "3 hours ago",
                 "Degree 5", "Category Mistreatment",
                 "My children are in danger", "I have been married to " +

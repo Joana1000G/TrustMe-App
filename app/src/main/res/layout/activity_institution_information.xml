@@ -32,14 +32,14 @@
 
     <ScrollView
         android:id="@+id/scrollView3"
-        android:layout_width="412dp"
-        android:layout_height="620dp"
+        android:layout_width="397dp"
+        android:layout_height="622dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationViewInstitutionInformation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar8"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -160,7 +160,7 @@
 
             <TextView
                 android:id="@+id/textAddress"
-                android:layout_width="287dp"
+                android:layout_width="0dp"
                 android:layout_height="37dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="24dp"
@@ -231,7 +231,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerListCrimes"
-                android:layout_width="335dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="13dp"
@@ -245,7 +245,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerListServices"
-                android:layout_width="333dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="12dp"

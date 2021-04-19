@@ -48,12 +48,12 @@ public class InstitutionsActivity extends AppCompatActivity implements
 
         Institutions justiceCenterWomen = new Institutions(1,
                 "Justice Center Women", "Open 24 hours",
-                "3330305450",
+                3330305450L,
                 "Calle Alvaro Alcazar, Jardines Alcalde, 44298 Guadalajara, Jal, Mexico.");
         Institutions municipalInstituteOfWomen = new Institutions(2,
                 "Municipal Institute of Women",
                 "Monday to Friday from 8:30 a.m. to 3:00 p.m.",
-                "(477) 311 18 32, 712 29 29 y 712 57 95",
+                4773111832L,
                 "Avenida Olímpica 1603, corner of Tula street Blue Water Cologne");
 
         //Guardar en la lista
@@ -75,8 +75,10 @@ public class InstitutionsActivity extends AppCompatActivity implements
         ValueEventListener valueEventListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Institutions institutions = snapshot.getValue(Institutions.class);
-                adapter.addInstitutions(institutions);
+                Iterable<DataSnapshot> snapshots = snapshot.getChildren();
+                for(DataSnapshot data : snapshots) {
+                    adapter.addInstitutions(data.getValue(Institutions.class));
+                }
             }
 
             @Override

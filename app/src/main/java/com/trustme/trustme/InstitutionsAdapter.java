@@ -31,9 +31,10 @@ public class InstitutionsAdapter extends RecyclerView.Adapter <InstitutionsAdapt
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Institutions institutions = list.get(position);
+
         holder.txtNameInstitution.setText(institutions.getNameInstitution());
         holder.txtHoursInstitution.setText(institutions.getHoursInstitution());
-        holder.txtPhoneInstitution.setText(institutions.getPhoneInstitution());
+        holder.txtPhoneInstitution.setText(institutions.getPhoneInstitution().toString());
         holder.txtAddress.setText(institutions.getAddress());
 
         holder.onClick(listener, institutions);
