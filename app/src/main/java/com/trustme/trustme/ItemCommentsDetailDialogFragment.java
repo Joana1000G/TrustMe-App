@@ -75,7 +75,7 @@ public class ItemCommentsDetailDialogFragment extends BottomSheetDialogFragment 
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        final RecyclerView recyclerView = view.findViewById(R.id.list);
+        final RecyclerView recyclerView = view.findViewById(R.id.recyclerListComments);
 
         Button btnShareComment = view.findViewById(R.id.btnShareComment);
         editTextWriteComment = view.findViewById(R.id.editTextWriteComment);
@@ -106,7 +106,7 @@ public class ItemCommentsDetailDialogFragment extends BottomSheetDialogFragment 
         //La diferencia aquí es que cargamos los datos que están en una referencia hija o nodo
         //La referencia hija les da por un nodo que tiene el identificador
         //Esto nos permitirá cargar todos los comentrios de ese objeto
-        commentsReference = firebaseDatabase.getReference("comments");
+        commentsReference = firebaseDatabase.getReference("comments").child(historyId);
 
         commentsReference.addValueEventListener(new ValueEventListener() {
             @Override

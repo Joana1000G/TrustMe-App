@@ -23,8 +23,7 @@ public class CommentsAdapter extends RecyclerView.Adapter<CommentsAdapter.ViewHo
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate
-                (R.layout.fragment_item_comments_detail_dialog_list_dialog, parent,
-                        false);
+                (R.layout.item_coments, parent, false);
         return new ViewHolder(view);
     }
 
@@ -32,7 +31,7 @@ public class CommentsAdapter extends RecyclerView.Adapter<CommentsAdapter.ViewHo
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Comments comments = list.get(position);
 
-        holder.txtUser.setText(comments.getUser());
+        //holder.txtUser.setText(comments.getUser());
         holder.txtDate.setText(comments.getDate());
         holder.txtCommentary.setText(comments.getCommentary());
 

@@ -91,6 +91,7 @@ public class OneHistoryActivity extends AppCompatActivity implements
         historyReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+
                 History history = snapshot.getValue(History.class);
 
                 txtUserStory.setText(history.getUserStory());
