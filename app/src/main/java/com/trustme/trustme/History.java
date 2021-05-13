@@ -4,7 +4,7 @@ import android.widget.Button;
 
 public class History {
 
-    private int id;
+    private String id;
     private String userStory;
     private String dateStory;
     private String degree;
@@ -22,10 +22,10 @@ public class History {
         this.textHistory = textHistory;
     }
 
-    public History(int i, String user1965, String s, String s1, String category_mistreatment,
+    public History(String id, String user1965, String s, String s1, String category_mistreatment,
                    String relationship_of_abuse, String s2) {}
 
-    public History(int id, String userStory, String dateStory, String degree, String category,
+    public History(String id, String userStory, String dateStory, String degree, String category,
                    String titleStory, String textHistory, String commentsOneHistory ) {
         this.id = id;
         this.userStory = userStory;
@@ -37,8 +37,8 @@ public class History {
         this.commentsOneHistory = commentsOneHistory;
     }
 
-    public int getId() {return  id;}
-    public void setId(int id) {this.id = id;}
+    public String getId() {return  id;}
+    public void setId(String id) {this.id = id;}
 
     public String getUserStory() {return userStory;}
     public void  setUserStory(String userStory) {this.userStory = userStory;}

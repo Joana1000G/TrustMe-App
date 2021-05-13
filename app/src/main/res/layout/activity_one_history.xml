@@ -154,7 +154,7 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="24dp"
                 android:background="@drawable/custom_button_style"
-                android:text="50 Comments"
+                android:text="Comments"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp"
                 app:backgroundTint="@color/principalButtonColor"

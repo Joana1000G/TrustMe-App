@@ -15,9 +15,8 @@ public class CommentsAdapter extends RecyclerView.Adapter<CommentsAdapter.ViewHo
     private ArrayList<Comments> list;
     private OnItemClickListener listener;
 
-    public CommentsAdapter(ArrayList<Comments> list, CommentsAdapter.OnItemClickListener listener) {
+    public CommentsAdapter(ArrayList<Comments> list) {
         this.list = list;
-        this.listener = listener;
     }
 
     @NonNull
@@ -58,7 +57,7 @@ public class CommentsAdapter extends RecyclerView.Adapter<CommentsAdapter.ViewHo
 
             txtUser = itemView.findViewById(R.id.txtUser);
             txtDate = itemView.findViewById(R.id.txtDate);
-            txtCommentary = itemView.findViewById(R.id.txtCommentary);
+            txtCommentary = itemView.findViewById(R.id.txtComment);
         }
 
         public void onClick(OnItemClickListener listener, Comments comments) {
@@ -66,7 +65,7 @@ public class CommentsAdapter extends RecyclerView.Adapter<CommentsAdapter.ViewHo
         }
     }
 
-    public void addComments(Comments comments) {
+    public void addComment(Comments comments) {
         list.add(comments);
         notifyDataSetChanged();
     }

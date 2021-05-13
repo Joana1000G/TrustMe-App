@@ -24,8 +24,8 @@ public class FeedActivity extends AppCompatActivity implements
         BottomNavigationView.OnNavigationItemSelectedListener,
         HistoryAdapter.OnItemClickListener {
 
+    public static final String KEY_HISTORY_ID = "historyId";
     private RecyclerView recyclerListHistory;
-
     private ArrayList<History> listHistory;
 
     private FirebaseDatabase firebaseDatabase;
@@ -51,26 +51,9 @@ public class FeedActivity extends AppCompatActivity implements
 
         listHistory = new ArrayList<>();
 
-        History relationshipOfAbuse = new History(1,"User1965",
-                "2 hours ago", "Degree 2", "Category Mistreatment",
-                "Relationship of abuse",
-                "About 1 year ago I broke up with my boyfriend for his mistreatment of me, " +
-                        "both psychological and physical for more than 1 year later I realized" +
-                        " the atmosphere so negative that there was in");
-        History myChildrenAreInDanger  = new History(2, "User1966", "3 hours ago",
-                "Degree 5", "Category Mistreatment",
-                "My children are in danger", "I have been married to " +
-                "my husband for 15 years, we have three daughters, but for some time things " +
-                "have not been going well, he beats us, and I am afraid that he will hurt " +
-                "them seriously");
-
-        listHistory.add(relationshipOfAbuse);
-        listHistory.add(myChildrenAreInDanger);
-
         adapter = new HistoryAdapter(listHistory, this);
 
         recyclerListHistory.setAdapter(adapter);
-
         getHistory();
 
 
@@ -146,11 +129,26 @@ public class FeedActivity extends AppCompatActivity implements
 
     @Override
     public void onItemClick(History history) {
-        int historyId = history.getId();
+        String historyId = history.getId();
         Intent intentOneHistory = new Intent(FeedActivity.this,
                 OneHistoryActivity.class);
+        intentOneHistory.putExtra(KEY_HISTORY_ID, historyId);
         startActivity(intentOneHistory);
 
+    }
+
+    private void showCommentsDialog(String id) {
+        ItemCommentsDetailDialogFragment.newInstance(id).show(getSupportFragmentManager(),
+                "comments_dialog");
+    }
+
+
+    private void navigateToComments(String historyId) {
+        Intent intentComments = new Intent (FeedActivity.this,
+                ItemCommentsDetailDialogFragment.class);
+        //Pasamos un dato al intento de abrir la pantalla de tipo String, el Id de la historia
+        intentComments.putExtra(KEY_HISTORY_ID, historyId);
+        startActivity(intentComments);
     }
 
 }

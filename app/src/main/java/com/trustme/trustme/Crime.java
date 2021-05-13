@@ -9,7 +9,7 @@ public class Crime {
 
     public Crime() {}
 
-    public Crime(int id, String Crime) {
+    public Crime(String crime) {
         this.id = id;
         this.crime = crime;
     }

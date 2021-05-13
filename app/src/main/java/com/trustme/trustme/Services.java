@@ -7,7 +7,7 @@ public class Services {
 
     public Services() {}
 
-    public Services(int id, String services) {
+    public Services(String services) {
         this.id = id;
         this.services = services;
     }

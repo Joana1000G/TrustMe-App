@@ -5,6 +5,8 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -19,9 +21,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * <p>A fragment that shows a list of items as a modal bottom sheet.</p>
@@ -30,8 +37,12 @@ import java.util.ArrayList;
  *     ItemCommentsDetailDialogFragment.newInstance(30).show(getSupportFragmentManager(), "dialog");
  * </pre>
  */
-public class ItemCommentsDetailDialogFragment extends BottomSheetDialogFragment
-        implements CommentsAdapter.OnItemClickListener {
+public class ItemCommentsDetailDialogFragment extends BottomSheetDialogFragment {
+
+    //Variale de clase constante
+    private static final String KEY_HISTORY_ID = "historyId";
+
+    private EditText editTextWriteComment;
 
     private RecyclerView recyclerListComments;
     private ArrayList<Comments> listComments;
@@ -41,14 +52,15 @@ public class ItemCommentsDetailDialogFragment extends BottomSheetDialogFragment
 
     private CommentsAdapter adapter;
 
-    // TODO: Customize parameter argument names
-    private static final String ARG_ITEM_COUNT = "item_count";
-
     // TODO: Customize parameters
-    public static ItemCommentsDetailDialogFragment newInstance(int itemCount) {
+    public static ItemCommentsDetailDialogFragment newInstance(String historyId) {
         final ItemCommentsDetailDialogFragment fragment = new ItemCommentsDetailDialogFragment();
+
+        //Diccionario o mapa = ES Key - Value (int, String, Boolean, Char)
+        //Permiten las asociaciones
         final Bundle args = new Bundle();
-        args.putInt(ARG_ITEM_COUNT, itemCount);
+
+        args.putString(KEY_HISTORY_ID, historyId);
         fragment.setArguments(args);
         return fragment;
     }
@@ -59,19 +71,49 @@ public class ItemCommentsDetailDialogFragment extends BottomSheetDialogFragment
                              @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_item_comments_detail_dialog_list_dialog,
                 container, false);
-
-
     }
 
-    private void getComments() {
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        final RecyclerView recyclerView = view.findViewById(R.id.list);
+
+        Button btnShareComment = view.findViewById(R.id.btnShareComment);
+        editTextWriteComment = view.findViewById(R.id.editTextWriteComment);
+
+
+        Bundle diccionarioValores = getArguments();
+
+        //TODO falta utilizar el valor de la variable
+        //Se van a consultar los datos del libro
+        String historyId = diccionarioValores.getString(KEY_HISTORY_ID);
+
+        firebaseDatabase = FirebaseDatabase.getInstance();
+
+        ArrayList<Comments> comments = new ArrayList<>();
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        adapter = new CommentsAdapter(comments);
+        recyclerView.setAdapter(adapter);
+
+        getComments(historyId);
+
+        btnShareComment.setOnClickListener(this::sendComment);
+    }
+
+
+    private void getComments(String historyId) {
+
+        //La diferencia aquí es que cargamos los datos que están en una referencia hija o nodo
+        //La referencia hija les da por un nodo que tiene el identificador
+        //Esto nos permitirá cargar todos los comentrios de ese objeto
         commentsReference = firebaseDatabase.getReference("comments");
 
-        ValueEventListener valueEventListener = new ValueEventListener() {
+        commentsReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Iterable<DataSnapshot> snapshots = snapshot.getChildren();
-                for(DataSnapshot data : snapshots) {
-                    adapter.addComments(data.getValue(Comments.class));
+                for(DataSnapshot data : snapshot.getChildren()) {
+                    Comments comment = data.getValue(Comments.class);
+                    adapter.addComment(comment);
                 }
             }
 
@@ -79,41 +121,47 @@ public class ItemCommentsDetailDialogFragment extends BottomSheetDialogFragment
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
-        };
-
-        commentsReference.addValueEventListener(valueEventListener);
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        firebaseDatabase = FirebaseDatabase.getInstance();
-
-        recyclerListComments = view.findViewById(R.id.recyclerListComments);
-
-        LinearLayoutManager acomodador = new LinearLayoutManager(getActivity());
-        recyclerListComments.setLayoutManager(acomodador);
-
-        listComments = new ArrayList<>();
-
-        Comments comments1 = new Comments(1,"User1345", "2 hours ago",
-                "You are very strong, thank you for sharing your story with us," +
-                        " we are here for you.");
-        Comments comments2 = new Comments(2, "User46807", "3hours ago",
-                "I hope everything is better now");
-
-        listComments.add(comments1);
-        listComments.add(comments2);
-
-        adapter = new CommentsAdapter(listComments, this);
-        recyclerListComments.setAdapter(adapter);
-
-        getComments();
-
+        });
     }
 
 
-    @Override
-    public void onItemClick(Comments comments) {
+    private void sendComment(View view) {
+        String txtComment = editTextWriteComment.getText().toString().trim();
+        if(!txtComment.isEmpty()) {
+            Comments comments = new Comments(txtComment);
+            saveComment(comments);
+        }else {
+            Toast.makeText(getActivity(), "Please enter your content",
+                    Toast.LENGTH_SHORT).show();
+        }
 
     }
+
+    private void saveComment(Comments comment) {
+        String commentId = commentsReference.push().getKey();
+
+        comment.setId(commentId);
+
+        Date now = new Date();
+        SimpleDateFormat formateador = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        //TODO UTC
+        //2021-05-11 16:42:12
+        String createdAt = formateador.format(now);
+        comment.setDate(createdAt);
+
+        commentsReference.child(commentId).setValue(comment)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if(task.isSuccessful()) {
+                            Toast.makeText(getActivity(),
+                                    "Comment sucessfully", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(getActivity(), "Error. try again later",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+    }
+
 }
