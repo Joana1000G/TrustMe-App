@@ -33,13 +33,12 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         History history = list.get(position);
 
-        holder.txtUserStory.setText(history.getUserStory());
+        //holder.txtUserStory.setText(history.getUserStory());
         holder.txtDateStory.setText(history.getDateStory());
         holder.txtDegree.setText(history.getDegree());
         holder.txtCategory.setText(history.getCategory());
         holder.txtTitleStory.setText(history.getTitleStory());
         holder.txtTextStory.setText(history.getTextHistory());
-        holder.btnCommentsOneHistory.setText(history.getCommentsOneHistory());
 
         holder.onClick(listener, history);
     }
@@ -54,24 +53,22 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView txtUserStory;
+        //TextView txtUserStory;
         TextView txtDateStory;
         TextView txtDegree;
         TextView txtCategory;
         TextView txtTitleStory;
         TextView txtTextStory;
-        Button btnCommentsOneHistory;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            txtUserStory = itemView.findViewById(R.id.txtUserStory);
+            //txtUserStory = itemView.findViewById(R.id.txtUserStory);
             txtDateStory = itemView.findViewById(R.id.txtDateStory);
             txtDegree = itemView.findViewById(R.id.txtDegree);
             txtCategory = itemView.findViewById(R.id.txtCategory);
             txtTitleStory = itemView.findViewById(R.id.txtTitleStory);
             txtTextStory = itemView.findViewById(R.id.txtTextHistory);
-            btnCommentsOneHistory = itemView.findViewById(R.id.btnCommentsOneHistory);
         }
         public void onClick(OnItemClickListener listener, History history) {
             itemView.setOnClickListener(v-> listener.onItemClick(history));

@@ -95,6 +95,7 @@ public class ItemCommentsDetailDialogFragment extends BottomSheetDialogFragment 
         adapter = new CommentsAdapter(comments);
         recyclerView.setAdapter(adapter);
 
+        //Llamamos al metodo para traer los comentarios de la historia por el Id
         getComments(historyId);
 
         btnShareComment.setOnClickListener(this::sendComment);

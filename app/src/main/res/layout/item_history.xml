@@ -114,6 +114,8 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="24dp"
+            android:ellipsize="end"
+            android:maxLines="4"
             android:text="About 1 year ago I broke up with my boyfriend for his mistreatment of me, both psychological and physical for more than 1 year later I realized the atmosphere so negative that there was in"
             android:textColor="#040404"
             android:textSize="18sp"

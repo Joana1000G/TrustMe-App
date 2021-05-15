@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
     //Variables
-    private EditText editTextUsername;
+    private EditText editTextEmail;
     private EditText editTextPassword;
     private TextView textForgotPassword;
     private Button btnLogin;
@@ -43,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         //Inflate
-        editTextUsername = findViewById(R.id.editTextUsername);
+        editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
         textForgotPassword = findViewById(R.id.textForgotPassword);
 
@@ -66,7 +66,7 @@ public class LoginActivity extends AppCompatActivity {
 
         //Tomar los valores de la caja de texto
 
-        email = editTextUsername.getText().toString().trim();
+        email = editTextEmail.getText().toString().trim();
         password = editTextPassword.getText().toString();
 
         // Operodores Lógicos

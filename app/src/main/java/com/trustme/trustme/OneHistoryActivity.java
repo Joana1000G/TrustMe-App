@@ -53,12 +53,14 @@ public class OneHistoryActivity extends AppCompatActivity implements
         //Obtener el valor por medio de su clave y indicado del tipo dato
         historyId = intent.getStringExtra(FeedActivity.KEY_HISTORY_ID);
 
-        txtUserStory = findViewById(R.id.txtUserStory);
+        //txtUserStory = findViewById(R.id.txtUserStory);
         txtDateStory = findViewById(R.id.txtDateStory);
         txtDegree = findViewById(R.id.txtDegree);
         txtCategory = findViewById(R.id.txtCategory);
         txtTitleStory = findViewById(R.id.txtTitleStory);
         txtTextStory = findViewById(R.id.txtTextHistory);
+
+        getHistory(historyId);
 
 
 
@@ -94,7 +96,7 @@ public class OneHistoryActivity extends AppCompatActivity implements
 
                 History history = snapshot.getValue(History.class);
 
-                txtUserStory.setText(history.getUserStory());
+                //txtUserStory.setText(history.getUserStory());
                 txtDateStory.setText(history.getDateStory());
                 txtDegree.setText(history.getDegree());
                 txtCategory.setText(history.getCategory());
